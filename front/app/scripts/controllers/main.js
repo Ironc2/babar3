@@ -128,6 +128,7 @@ angular.module('BabarApp')
 				$scope.main.reloadCustomer();
 				$mdToast.showSimple('Payed');
 			}, function(res) {
+				console.log(res);
 				onError(res);
 			});
 		}, function() {

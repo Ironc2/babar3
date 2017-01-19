@@ -21,10 +21,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "BABAR3_SECRET_KEY"
+SECRET_KEY = "h1Lh9V+Ixz33D7z3OuiAMhSHvjFDOSIndt4cm38pwj71TNOErQotgpI0gGN593op2mWcOOVsllVlaRk63iiK"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # Application definition
 INSTALLED_APPS = [
@@ -84,7 +84,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'USER': 'root',
-	'PASSWORD': "BABAR3_SQL_PASSWORD",
+	'PASSWORD': "babar2016",
         'NAME': 'babar3'
     }
 }
@@ -176,3 +176,4 @@ SWAGGER_SETTINGS = {
         'title': 'babar3',
     },
 }
+ALLOWED_HOSTS = [".localhost"]

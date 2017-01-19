@@ -34,6 +34,11 @@ angular
 		controller: 'ErrorCtrl',
 		controllerAs: 'error'
 	})
+	.when('/touch', {
+		templateUrl: 'views/touch/main.html',
+		controller: 'MainCtrl',
+		controllerAs: 'main'
+	})
 	.otherwise({
 		redirectTo: '/'
 	});

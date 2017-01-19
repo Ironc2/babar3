@@ -1,32 +1,31 @@
 #!/bin/bash
 
-set -e
+#set -e
 
 TARGET_DIR_PREFIX=/var/www
 TARGET_DIR_SUFFIX=babar3
 TARGET_DIR=$TARGET_DIR_PREFIX/$TARGET_DIR_SUFFIX
 SETTINGS=$TARGET_DIR/back/babar3/settings.py
 
-
-sudo apt-get install -y mysql-client mysql-server libmysqlclient-dev nginx nodejs python3-pip git virtualenv npm
-[ ! -e /usr/bin/node ] && sudo ln -s /usr/bin/nodejs /usr/bin/node
-
-
-set +e
-sudo nginx -s stop
-sudo systemctl stop gunicorn
-sudo systemctl disable gunicorn
-set -e
+# sudo apt-get install -y mysql-client mysql-server libmysqlclient-dev nginx nodejs python3-pip git virtualenv npm
+# [ ! -e /usr/bin/node ] && sudo ln -s /usr/bin/nodejs /usr/bin/node
 
 
-if [ ! -d $TARGET_DIR ]; then
+#set +e
+#sudo nginx -s stop
+#sudo systemctl stop gunicorn
+#sudo systemctl disable gunicorn
+#set -e
+
+:'
+#if [ ! -d $TARGET_DIR ]; then
 	# Cloning => first time => gotta ask for prod values
 
-	sudo mkdir -p $TARGET_DIR
-	sudo chown -R $USER:www-data $TARGET_DIR
-	cd $TARGET_DIR_PREFIX
-	git clone https://github.com/Babaritech/babar3.git $TARGET_DIR_SUFFIX
-	cd $TARGET_DIR_SUFFIX
+#	sudo mkdir -p $TARGET_DIR
+#	sudo chown -R $USER:www-data $TARGET_DIR
+#	cd $TARGET_DIR_PREFIX
+#	git clone https://github.com/Babaritech/babar3.git $TARGET_DIR_SUFFIX
+#	cd $TARGET_DIR_SUFFIX
 
 	read -p "Enter website URL in the format example.org: " domain
 	echo
@@ -80,7 +79,7 @@ fi
 
 
 cd $TARGET_DIR/front
-sudo npm install -g npm
+#sudo npm install -g npm
 sudo npm install -g grunt-cli bower yo generator-karma generator-angular
 sudo npm install
 bower install
@@ -94,6 +93,7 @@ pip3 install -r requirements.txt
 python3 manage.py migrate
 python3 manage.py collectstatic --clear --no-input
 python3 manage.py check --deploy
+'
 
 
 cd $TARGET_DIR/conf
