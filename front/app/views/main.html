@@ -126,7 +126,7 @@
 				ng-show="main.product && !main.paymentIsOpen"
 				layout="column"
 				layout-align="center center">
-				<span>{{main.product.name}} x{{main.product.quantity}} {{main.product.price * main.product.quantity}}€</span>
+				<span>{{main.product.name}} x{{main.product.quantity}} {{100 * main.product.price * main.product.quantity / 100}}€</span>
 			</md-content>
 
 			<form

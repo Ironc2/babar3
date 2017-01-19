@@ -49,7 +49,6 @@ angular.module('BabarApp')
 		$scope.main.products = res.data;
 	});
 	this.unsetProduct = function() {
-		this.product.quantity = 1;
 		this.productSearchText = '';
 		this.product = undefined;
 	};
